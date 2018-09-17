@@ -1,15 +1,13 @@
 build:
-  box: alpine
+  box: golang
   steps:
     - script:
         name: Normal step
         code: |
           echo This is a normal step
     - internal/docker-run:
-        image: busybox
-        name: myContainer
-    - internal/docker-kill:
-        name: myContainer
+        image: mongo
+        name: myTestContainer 
   after-steps:
     - script:
         name: After step 
