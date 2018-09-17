@@ -1,5 +1,5 @@
 build:
-  box: golang
+  box: alpine
   steps:
     - script:
         name: Normal step
