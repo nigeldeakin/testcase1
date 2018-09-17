@@ -13,17 +13,7 @@ build:
         name: Dummy
         code: |
           echo This is a step
-          exit 1
-  after-steps:
-    - script:
-        name: After step
-        code: |
-          echo This is an after step
-    - nigeldeakin/pagerduty-notifier@1.0.14:
-        service_key: $PAGERDUTY_SERVICE_KEY
-        notify_on: $PAGERDUTY_NOTIFY_ON
-        description: $PAGERDUTY_DESCRIPTION
-        branch: $PAGERDUTY_BRANCH          
+   
 
 deploy:
   box: golang:1.10
@@ -36,7 +26,12 @@ deploy:
     - script:
         name: After step
         code: |
-          echo This is an after step       
+          echo This is an after step
+    - nigeldeakin/pagerduty-notifier@1.0.14:
+        service_key: $PAGERDUTY_SERVICE_KEY
+        notify_on: $PAGERDUTY_NOTIFY_ON
+        description: $PAGERDUTY_DESCRIPTION
+        branch: $PAGERDUTY_BRANCH         
 
    
 
