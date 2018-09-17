@@ -1,38 +1,21 @@
-workflows:
-  - name: build-and-deploy
-    pipelines:
-      - name: build
-      - name: deploy
-        requires:
-          - build
-
 build:
-  box: golang:1.10
+  box: alpine
   steps:
     - script:
-        name: Dummy
+        name: Normal step
         code: |
-          echo This is a step
-   
-
-deploy:
-  box: golang:1.10
-  steps:
-    - script:
-        name: Dummy
-        code: |
-          echo This is a step
-          exit 1
+          echo This is a normal step
+    - internal/docker-run:
+        image: busybox
+        name: myContainer
+    - internal/docker-kill:
+        name: myContainer
   after-steps:
     - script:
-        name: After step
-        code: |
-          echo This is an after step
-    - nigeldeakin/pagerduty-notifier@1.0.19:
-        service_key: $PAGERDUTY_SERVICE_KEY
-        notify_on: $PAGERDUTY_NOTIFY_ON
-        description: $PAGERDUTY_DESCRIPTION
-        branch: $PAGERDUTY_BRANCH         
+        name: After step 
+        code: echo This is an after step
+
+    
 
    
 
