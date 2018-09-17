@@ -22,6 +22,7 @@ deploy:
         name: Dummy
         code: |
           echo This is a step
+          exit 1
   after-steps:
     - script:
         name: After step
