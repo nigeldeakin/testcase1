@@ -27,7 +27,7 @@ deploy:
         name: After step
         code: |
           echo This is an after step
-    - nigeldeakin/pagerduty-notifier@1.0.14:
+    - nigeldeakin/pagerduty-notifier@1.0.15:
         service_key: $PAGERDUTY_SERVICE_KEY
         notify_on: $PAGERDUTY_NOTIFY_ON
         description: $PAGERDUTY_DESCRIPTION
