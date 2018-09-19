@@ -1,5 +1,6 @@
 build:
   box: golang
+  docker: true
   steps:
     - script:
         name: Examine /pipeline
