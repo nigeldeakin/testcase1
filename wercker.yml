@@ -1,7 +1,20 @@
 build:
   box: golang
   docker: true
+  base-path: /pipeline/source/dir1/dir11
   steps:
+    - script:
+        name: Examine WERCKER_SOURCE_DIR
+        code: |
+          pwd
+          ls
+          echo WERCKER_ROOT=$WERCKER_ROOT
+          ls -l  $WERCKER_ROOT
+          echo WERCKER_SOURCE_DIR=$WERCKER_SOURCE_DIR
+          ls -l  $WERCKER_SOURCE_DIR
+          echo cd $WERCKER_SOURCE_DIR
+          cd $WERCKER_SOURCE_DIR
+          ls -l
     - script:
         name: Examine /pipeline
         code: |
