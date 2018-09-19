@@ -1,18 +1,37 @@
 build:
-  box: alpine
+  box: golang
   steps:
     - script:
-        name: Normal step
+        name: Examine /pipeline
         code: |
-          echo This is a normal step
-    - internal/docker-run:
-        image: mongo
-        name: myTestContainer 
+          cd /pipeline
+          ls -l
+    - script:
+        name: Normal step 1
+        code: |
+          echo This is a normal step 1
+          export FOO=foo
+          export NL='X
+          'Y
+          export BAR=bar
+#    - internal/docker-run:
+#        image: mongo
+#        name: myTestContainer 
+    - script:
+        name: Normal step 2
+        code: |
+          echo This is a normal step 2  
+          echo "${NL}"
+          echo "$FOO"
+          echo "$BAR"   
   after-steps:
     - script:
         name: After step 
-        code: echo This is an after step
-
+        code: |
+          echo This is an after step
+          echo "${NL}"
+          echo "$FOO"
+          echo "$BAR"
     
 
    
