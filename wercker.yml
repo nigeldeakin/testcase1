@@ -11,4 +11,4 @@ test:
     - script:
         name: Say test
         code: |
-          echo test
+          echo $Foo
