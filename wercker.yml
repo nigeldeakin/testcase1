@@ -1,19 +1,7 @@
 build:
-  box: golang
+  box: alpine
   steps:
     - script:
-        name: Give a friendly greeting
+        name: Say hello
         code: |
-          echo Hello Lisa! This is the build pipeline
-          echo Hello eveyone else!
- secondstep:
-  box: golang
-  steps:
-    - script:
-        name: Another greeting
-        code: |
-          echo This is secondstep
-    
-
-   
-
+          echo Hello
