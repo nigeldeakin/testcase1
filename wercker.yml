@@ -5,3 +5,10 @@ build:
         name: Say hello
         code: |
           echo Hello
+test:
+  box: alpine
+  steps:
+    - script:
+        name: Say test
+        code: |
+          echo test
