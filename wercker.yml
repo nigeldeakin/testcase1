@@ -16,7 +16,3 @@ build:
           export VAR2='$FOO'
           export VAR3="$FOO"
 
-    
-
-   
-
