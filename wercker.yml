@@ -9,10 +9,18 @@ build:
           export VAR1=$FOO
           export VAR2='$FOO'
           export VAR3="$FOO"
+
+          echo VAR1="$VAR1"
+          echo VAR1="$VAR1"
+          echo VAR1="$VAR1"
+
     - script:
-        name: Abother script step
+        name: Another script step
         code: |
           export VAR1=$FOO
           export VAR2='$FOO'
           export VAR3="$FOO"
 
+          echo VAR1="$VAR1"
+          echo VAR1="$VAR1"
+          echo VAR1="$VAR1"
