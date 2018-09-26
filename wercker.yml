@@ -1,53 +1,21 @@
 build:
   box: golang
   docker: true
-  base-path: /pipeline/source/dir1/dir11
   steps:
     - script:
-        name: Examine WERCKER_SOURCE_DIR
+        name: A script step
         code: |
-          pwd
-          ls
-          echo WERCKER_ROOT=$WERCKER_ROOT
-          ls -l  $WERCKER_ROOT
-          echo WERCKER_SOURCE_DIR=$WERCKER_SOURCE_DIR
-          ls -l  $WERCKER_SOURCE_DIR
-          echo cd $WERCKER_SOURCE_DIR
-          cd $WERCKER_SOURCE_DIR
-          ls -l
-          echo df...
-          df
+          export FOO=BAR
+          export VAR1=$FOO
+          export VAR2='$FOO'
+          export VAR3="$FOO"
     - script:
-        name: Examine /pipeline
+        name: Abother script step
         code: |
-          cd /pipeline
-          ls -l
-    - script:
-        name: Normal step 1
-        code: |
-          echo This is a normal step 1
-          export FOO=foo
-          export NL='X
-          'Y
-          export BAR=bar
-#    - internal/docker-run:
-#        image: mongo
-#        name: myTestContainer 
-    - script:
-        name: Normal step 2
-        code: |
-          echo This is a normal step 2  
-          echo "${NL}"
-          echo "$FOO"
-          echo "$BAR"   
-  after-steps:
-    - script:
-        name: After step 
-        code: |
-          echo This is an after step
-          echo "${NL}"
-          echo "$FOO"
-          echo "$BAR"
+          export VAR1=$FOO
+          export VAR2='$FOO'
+          export VAR3="$FOO"
+
     
 
    
