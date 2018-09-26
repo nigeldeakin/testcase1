@@ -9,10 +9,13 @@ build:
           export VAR1=$FOO
           export VAR2='$FOO'
           export VAR3="$FOO"
+          export JUST_A_QUOTE="'"
 
           echo VAR1="$VAR1"
           echo VAR2="$VAR2"
           echo VAR3="$VAR3"
+          echo VAR3="$VAR3"
+          echo JUST_A_QUOTE="$JUST_A_QUOTE"
 
     - script:
         name: Another script step
@@ -24,3 +27,4 @@ build:
           echo VAR1="$VAR1"
           echo VAR2="$VAR2"
           echo VAR3="$VAR3"
+          echo JUST_A_QUOTE="$JUST_A_QUOTE"
