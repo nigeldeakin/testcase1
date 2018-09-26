@@ -11,8 +11,8 @@ build:
           export VAR3="$FOO"
 
           echo VAR1="$VAR1"
-          echo VAR1="$VAR1"
-          echo VAR1="$VAR1"
+          echo VAR2="$VAR2"
+          echo VAR3="$VAR3"
 
     - script:
         name: Another script step
@@ -22,5 +22,5 @@ build:
           export VAR3="$FOO"
 
           echo VAR1="$VAR1"
-          echo VAR1="$VAR1"
-          echo VAR1="$VAR1"
+          echo VAR2="$VAR2"
+          echo VAR3="$VAR3"
