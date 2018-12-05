@@ -9,14 +9,19 @@ build:
           export VAR1=$FOO
           export VAR2='$FOO'
           export VAR3="$FOO"
-          export JUST_A_QUOTE="'"
+          #export JUST_A_QUOTE="'"
 
           echo VAR1="$VAR1"
           echo VAR2="$VAR2"
           echo VAR3="$VAR3"
           echo VAR3="$VAR3"
-          echo JUST_A_QUOTE="$JUST_A_QUOTE"
-
+          #echo JUST_A_QUOTE="$JUST_A_QUOTE"
+          export long="This
+          is
+          a multi
+          line
+          step"
+          env
     - script:
         name: Another script step
         code: |
@@ -27,4 +32,15 @@ build:
           echo VAR1="$VAR1"
           echo VAR2="$VAR2"
           echo VAR3="$VAR3"
-          echo JUST_A_QUOTE="$JUST_A_QUOTE"
+          #echo JUST_A_QUOTE="$JUST_A_QUOTE"
+    - nigeldeakin/echo-properties:
+         prop1: HELO
+#        prop1: $VAR1
+#        prop2: $VAR2
+#        prop3: $VAR3
+#        prop4: ${VAR1}${VAR2}${VAR3}
+#        prop5: T
+    - script:
+        name: The end
+        code: |
+          echo "The End"
