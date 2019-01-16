@@ -1,4 +1,39 @@
+
 build:
+  box: golang
+  steps:
+    - script:
+        name: Step 1
+        code: |
+          echo Step 1
+          sleep 5
+    - script:
+        name: Step 2
+        code: |
+          echo Step 2
+          sleep 5
+    - script:
+        name: Step 3
+        code: |
+          echo Step 3
+          sleep 5
+  after-steps:
+    - script:
+        name: After-Step 1
+        code: |
+          echo After-Step 1
+          sleep 5
+    - script:
+        name: After-Step 2
+        code: |
+          echo After-Step 2
+          sleep 5
+    - script:
+        name: After-Step 3
+        code: |
+          echo After-Step 3
+          sleep 5
+mainsteps-pass-aftersteps-pass:
   box: golang
   steps:
     - script:
@@ -68,7 +103,7 @@ mainsteps-pass-afterstep2-fails:
         code: |
           echo After-Step 3
           sleep 5
-mainsteps-pass-aftersteps-pass:
+build:
   box: golang
   steps:
     - script:
