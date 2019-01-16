@@ -33,7 +33,7 @@ build:
         code: |
           echo After-Step 3
           sleep 5
-mainsteps-pass-aftersteps-pass:
+mainstep2-fails-aftersteps-pass:
   box: golang
   steps:
     - script:
@@ -103,7 +103,7 @@ mainsteps-pass-afterstep2-fails:
         code: |
           echo After-Step 3
           sleep 5
-build:
+mainstep2-fails-afterstep2-fails:
   box: golang
   steps:
     - script:
@@ -116,6 +116,7 @@ build:
         code: |
           echo Step 2
           sleep 5
+          exit 1
     - script:
         name: Step 3
         code: |
@@ -132,6 +133,7 @@ build:
         code: |
           echo After-Step 2
           sleep 5
+          exit 1
     - script:
         name: After-Step 3
         code: |
