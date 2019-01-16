@@ -33,3 +33,72 @@ build:
         code: |
           echo After-Step 3
           sleep 5
+mainsteps-pass-afterstep2-fails:
+  box: golang
+  steps:
+    - script:
+        name: Step 1
+        code: |
+          echo Step 1
+          sleep 5
+    - script:
+        name: Step 2
+        code: |
+          echo Step 2
+          sleep 5
+    - script:
+        name: Step 3
+        code: |
+          echo Step 3
+          sleep 5
+  after-steps:
+    - script:
+        name: After-Step 1
+        code: |
+          echo After-Step 1
+          sleep 5
+    - script:
+        name: After-Step 2
+        code: |
+          echo After-Step 2
+          sleep 5
+          exit 1
+    - script:
+        name: After-Step 3
+        code: |
+          echo After-Step 3
+          sleep 5
+mainsteps-pass-aftersteps-pass:
+  box: golang
+  steps:
+    - script:
+        name: Step 1
+        code: |
+          echo Step 1
+          sleep 5
+    - script:
+        name: Step 2
+        code: |
+          echo Step 2
+          sleep 5
+    - script:
+        name: Step 3
+        code: |
+          echo Step 3
+          sleep 5
+  after-steps:
+    - script:
+        name: After-Step 1
+        code: |
+          echo After-Step 1
+          sleep 5
+    - script:
+        name: After-Step 2
+        code: |
+          echo After-Step 2
+          sleep 5
+    - script:
+        name: After-Step 3
+        code: |
+          echo After-Step 3
+          sleep 5
