@@ -3,9 +3,9 @@ build:
   box: alpine
   steps:
     - script:
-        name: Sleeping for 10
+        name: Sleeping for 60
         code: |
-          sleep 10
+          sleep 60
     - script:
         name: Awake
         code: |
