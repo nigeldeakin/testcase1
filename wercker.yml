@@ -18,7 +18,7 @@ build:
         name: Quick 4
         code: |
           echo Quick!
-      - script:
+    - script:
         name: Quick 5
         code: |
           echo Quick!
@@ -50,7 +50,7 @@ build:
         name: Quick 12
         code: |
           echo Quick!
-      - script:
+    - script:
         name: Quick 13
         code: |
           echo Quick!
@@ -85,7 +85,7 @@ deploy:
         name: Quick 4
         code: |
           echo Quick!
-      - script:
+    - script:
         name: Quick 5
         code: |
           echo Quick!
@@ -117,7 +117,7 @@ deploy:
         name: Quick 12
         code: |
           echo Quick!
-      - script:
+    - script:
         name: Quick 13
         code: |
           echo Quick!
